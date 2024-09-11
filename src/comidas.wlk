@@ -9,6 +9,9 @@ object manzana {
 	method siguiente(){
 		return alpiste
 	}
+	method energiaQueAporta(){
+		return 50
+	}
 }
 
 object alpiste {
@@ -18,6 +21,9 @@ object alpiste {
 	}
 	method siguiente(){
 		return silvestre
+	}
+	method energiaQueAporta(){
+		return 50
 	}
 }
 

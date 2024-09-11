@@ -50,6 +50,7 @@ object config {
 		keyboard.up().onPressDo({ pepita.irA(pepita.position().up(1))})
 		keyboard.down().onPressDo({ pepita.irA(pepita.position().down(1))})
 		keyboard.enter().onPressDo({self.cambiarSeguidor()})
+		keyboard.c().onPressDo({})
 	}
 
 	method configurarColisiones() {
