@@ -10,7 +10,6 @@ object tutorial1 {
 		game.addVisual(silvestre)
 		game.addVisual(pepita)
 		config.configurarTeclas()
-		config.cambiarSeguidor()
 	}
 
 }
@@ -37,6 +36,7 @@ object tutorial3 {
 		game.addVisual(silvestre)
 		game.addVisual(pepita)
 		config.configurarTeclas()
+		config.configurarTicks()
 		config.configurarColisiones()
 	}
 
@@ -45,19 +45,25 @@ object tutorial3 {
 object config {
 
 	method configurarTeclas() {
-		keyboard.left().onPressDo({ pepita.irA(pepita.position().left(1))})
-		keyboard.right().onPressDo({ pepita.irA(pepita.position().right(1))})
-		keyboard.up().onPressDo({ pepita.irA(pepita.position().up(1))})
-		keyboard.down().onPressDo({ pepita.irA(pepita.position().down(1))})
-		keyboard.enter().onPressDo({self.cambiarSeguidor()})
-	}
-
-	method configurarColisiones() {
-		game.onCollideDo(pepita, { algo => algo.teEncontro(pepita)})
+		keyboard.left().onPressDo({if(pepita.position().x() > 0) {pepita.irA(pepita.position().left(1))}})
+		keyboard.right().onPressDo({if(pepita.position().x() < game.width() - 1) {pepita.irA(pepita.position().right(1))}})
+		keyboard.up().onPressDo({if(pepita.position().y() < game.height() - 1) {pepita.irA(pepita.position().up(1))}})
+		keyboard.down().onPressDo({if(pepita.position().y() > 0) {pepita.irA(pepita.position().down(1))}})
+		keyboard.c().onPressDo({pepita.interactuar()})
+		
 	}
 
 
-	method cambiarSeguidor(){
+	method configurarTicks(){
+		game.onTick(800, "perder altura", {pepita.caerUnaAltura()})
+	}
+
+
+	method configurarColisiones(){
+		game.onCollideDo(pepita, {game.colliders(pepita).interactuar(pepita)})
+	}
+
+	/*method cambiarSeguidor(){
 		const seguidorActual = pepita.seguidor()
 		const seguidorSiguiente = seguidorActual.siguiente()
 		seguidorSiguiente.position(seguidorActual.position())
@@ -65,6 +71,7 @@ object config {
 		game.addVisual(seguidorSiguiente)
 		pepita.seguidor(seguidorSiguiente)
 	}
+	*/
 }
 
  

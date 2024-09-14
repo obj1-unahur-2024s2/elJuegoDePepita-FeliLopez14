@@ -10,9 +10,9 @@ program PepitaGame {
 	game.width(10)
 	game.boardGround("fondo.jpg")
 
-	tutorial1.iniciar()
+	tutorial3.iniciar()
 
-	game.showAttributes(pepita) //Debug
+	game.showAttributes(pepita)
 
 	game.start()
 }
