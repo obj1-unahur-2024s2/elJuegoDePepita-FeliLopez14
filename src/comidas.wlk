@@ -15,6 +15,9 @@ object manzana {
 	method colisionar() {
 	  
 	}
+	method energiaQueAporta(){
+		return 50
+	}
 }
 
 object alpiste {
@@ -30,6 +33,9 @@ object alpiste {
 	}
 	method colisionar(){
 		
+	}
+	method energiaQueAporta(){
+		return 50
 	}
 }
 
