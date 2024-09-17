@@ -12,7 +12,7 @@ object manzana {
 	method interactuar(algo){
 		algo.come(self)
 	}
-	method colisionar() {
+	method interactuarColision(algo) {
 	  
 	}
 	method energiaQueAporta(){
@@ -31,7 +31,7 @@ object alpiste {
 	method interactuar(algo){
 		algo.come(self)
 	}
-	method colisionar(){
+	method interactuarColision(algo){
 		
 	}
 	method energiaQueAporta(){

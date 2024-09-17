@@ -59,7 +59,7 @@ object config {
 
 
 	method configurarColisiones(){
-		game.onCollideDo(pepita, {game.colliders(pepita).interactuar(pepita)})
+		game.onCollideDo(pepita, {algo => algo.interactuarColision(pepita)})
 	}
 
 	/*method cambiarSeguidor(){

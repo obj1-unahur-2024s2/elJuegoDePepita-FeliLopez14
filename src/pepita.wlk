@@ -42,7 +42,6 @@ object pepita {
 	}
 
 	method estaEnElNido() {
-		
 		return position == nido.position()
 	}
 	method interactuar(){

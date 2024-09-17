@@ -3,17 +3,17 @@ import pepita.*
 import wollok.game.*
 
 object nido {
-	var property position = game.at(4,7)
+	var property position = game.at(7,4)
 	method image(){
 		return "nido.png"
 	}
 	method interactuar(algo){
 		
 	}
-	method colisionar(algo){
-		algo.energia(0)
-		game.say(algo,"GANE!")
-		game.stop()
+	method interactuarColision(algo){
+		//algo.energia(0)
+		game.say(self,"GANASTE!")
+		game.onTick(2000,"finalizar juego", {game.stop()})
 	}
 }
 
@@ -25,9 +25,10 @@ object silvestre {
 	method interactuar(algo){
 		
 	}
-	method colisionar(algo){
+	method interactuarColision(algo){
 		algo.energia(0)
 		game.say(self,"Te atrape, perdiste")
+		game.onTick(2000,"finalizar juego", {game.stop()})
 	}
 
 }
