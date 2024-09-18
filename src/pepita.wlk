@@ -14,6 +14,7 @@ object pepita {
 	method come(comida) {
 		energia = energia + comida.energiaQueOtorga()
 		game.say(self, "La energia ahora es de: " + energia)
+		game.removeVisual(comida)
 	}
 
 	method vola(kms) {

@@ -38,6 +38,9 @@ object tutorial3 {
 		config.configurarTeclas()
 		config.configurarTicks()
 		config.configurarColisiones()
+		//schedule sirve para ejecutar un bloque de comandos una sola vez cuando pase cierto tiempo.
+		game.schedule(1000, {game.say(pepita, "Hola Jugador")})
+
 	}
 
 }
